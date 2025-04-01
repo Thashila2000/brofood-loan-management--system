@@ -129,8 +129,6 @@ public class add_loan extends javax.swing.JFrame {
         pay_amount_txt = new app.bolivia.swing.JCTextField();
         tot_loan_amount_txt = new app.bolivia.swing.JCTextField();
         jLabel4 = new javax.swing.JLabel();
-        cancel_btn = new javax.swing.JLabel();
-        back_btn = new javax.swing.JLabel();
         add_loan_txt = new rojeru_san.complementos.RSButtonHover();
         pay_loan_btn = new rojeru_san.complementos.RSButtonHover();
         clear_pay_btn = new rojeru_san.complementos.RSButtonHover();
@@ -144,8 +142,12 @@ public class add_loan extends javax.swing.JFrame {
         loan_txt1 = new app.bolivia.swing.JCTextField();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+        ancel_btn = new rojeru_san.complementos.RSButtonHover();
+        back_btn = new rojeru_san.complementos.RSButtonHover();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(0, 51, 102));
@@ -204,29 +206,9 @@ public class add_loan extends javax.swing.JFrame {
         jLabel4.setText("Enter pay amount :");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 650, 200, 50));
 
-        cancel_btn.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 50)); // NOI18N
-        cancel_btn.setForeground(new java.awt.Color(153, 0, 0));
-        cancel_btn.setText("X");
-        cancel_btn.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                cancel_btnMouseClicked(evt);
-            }
-        });
-        jPanel1.add(cancel_btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(1460, 10, 70, 50));
-
-        back_btn.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 70)); // NOI18N
-        back_btn.setForeground(new java.awt.Color(153, 0, 0));
-        back_btn.setText("<");
-        back_btn.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                back_btnMouseClicked(evt);
-            }
-        });
-        jPanel1.add(back_btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 0, 80, 60));
-
         add_loan_txt.setBackground(new java.awt.Color(102, 0, 51));
         add_loan_txt.setText("ADD LOAN");
-        add_loan_txt.setColorHover(new java.awt.Color(204, 51, 0));
+        add_loan_txt.setColorHover(new java.awt.Color(255, 51, 0));
         add_loan_txt.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
         add_loan_txt.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -240,9 +222,9 @@ public class add_loan extends javax.swing.JFrame {
         });
         jPanel1.add(add_loan_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 280, 160, -1));
 
-        pay_loan_btn.setBackground(new java.awt.Color(0, 255, 0));
+        pay_loan_btn.setBackground(new java.awt.Color(51, 204, 0));
         pay_loan_btn.setText("PAY");
-        pay_loan_btn.setColorHover(new java.awt.Color(255, 102, 0));
+        pay_loan_btn.setColorHover(new java.awt.Color(255, 51, 0));
         pay_loan_btn.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
         pay_loan_btn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -254,11 +236,11 @@ public class add_loan extends javax.swing.JFrame {
                 pay_loan_btnActionPerformed(evt);
             }
         });
-        jPanel1.add(pay_loan_btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 740, 160, -1));
+        jPanel1.add(pay_loan_btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 730, 160, -1));
 
         clear_pay_btn.setBackground(new java.awt.Color(102, 102, 255));
         clear_pay_btn.setText("Clear");
-        clear_pay_btn.setColorHover(new java.awt.Color(204, 51, 0));
+        clear_pay_btn.setColorHover(new java.awt.Color(255, 51, 0));
         clear_pay_btn.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
         clear_pay_btn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -270,7 +252,7 @@ public class add_loan extends javax.swing.JFrame {
                 clear_pay_btnActionPerformed(evt);
             }
         });
-        jPanel1.add(clear_pay_btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 740, 170, -1));
+        jPanel1.add(clear_pay_btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 730, 170, -1));
 
         cal_loan_btn.setBackground(new java.awt.Color(0, 204, 204));
         cal_loan_btn.setText("CALCULATE TOTAL LOAN AMOUNT");
@@ -320,7 +302,7 @@ public class add_loan extends javax.swing.JFrame {
                 clear_add_btn1ActionPerformed(evt);
             }
         });
-        jPanel1.add(clear_add_btn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 280, 170, -1));
+        jPanel1.add(clear_add_btn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 280, 170, -1));
 
         clear_cal_btn.setBackground(new java.awt.Color(102, 102, 255));
         clear_cal_btn.setText("Clear");
@@ -366,7 +348,41 @@ public class add_loan extends javax.swing.JFrame {
         jLabel6.setText("Enter customer name:");
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 580, 230, 50));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1550, 810));
+        ancel_btn.setBackground(new java.awt.Color(0, 51, 102));
+        ancel_btn.setText("X");
+        ancel_btn.setColorHover(new java.awt.Color(0, 51, 102));
+        ancel_btn.setColorTextHover(new java.awt.Color(153, 0, 0));
+        ancel_btn.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 50)); // NOI18N
+        ancel_btn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ancel_btnMouseClicked(evt);
+            }
+        });
+        ancel_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ancel_btnActionPerformed(evt);
+            }
+        });
+        jPanel1.add(ancel_btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(1450, 20, 80, -1));
+
+        back_btn.setBackground(new java.awt.Color(0, 51, 102));
+        back_btn.setText("<");
+        back_btn.setColorHover(new java.awt.Color(0, 51, 102));
+        back_btn.setColorTextHover(new java.awt.Color(153, 0, 0));
+        back_btn.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 70)); // NOI18N
+        back_btn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                back_btnMouseClicked(evt);
+            }
+        });
+        back_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                back_btnActionPerformed(evt);
+            }
+        });
+        jPanel1.add(back_btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 80, 50));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1550, 830));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -419,16 +435,6 @@ public class add_loan extends javax.swing.JFrame {
     private void tot_loan_amount_txtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tot_loan_amount_txtActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tot_loan_amount_txtActionPerformed
-
-    private void back_btnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_back_btnMouseClicked
-        Home_page hp1=new Home_page();
-        hp1.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_back_btnMouseClicked
-
-    private void cancel_btnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cancel_btnMouseClicked
-         System.exit(0);
-    }//GEN-LAST:event_cancel_btnMouseClicked
     
     public void clear_add_loans_fields(){
        name_txt.setText("");
@@ -596,6 +602,24 @@ public class add_loan extends javax.swing.JFrame {
       loan_txt.requestFocus(); // Move focus to loan_amount_txt
     }
     }//GEN-LAST:event_name_txtKeyPressed
+
+    private void ancel_btnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ancel_btnMouseClicked
+        this.dispose();
+    }//GEN-LAST:event_ancel_btnMouseClicked
+
+    private void ancel_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ancel_btnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ancel_btnActionPerformed
+
+    private void back_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_back_btnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_back_btnActionPerformed
+
+    private void back_btnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_back_btnMouseClicked
+        Home_page hp =new Home_page();
+        hp.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_back_btnMouseClicked
    
     /**
      * @param args the command line arguments
@@ -634,9 +658,9 @@ public class add_loan extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private rojeru_san.complementos.RSButtonHover add_loan_txt;
-    private javax.swing.JLabel back_btn;
+    private rojeru_san.complementos.RSButtonHover ancel_btn;
+    private rojeru_san.complementos.RSButtonHover back_btn;
     private rojeru_san.complementos.RSButtonHover cal_loan_btn;
-    private javax.swing.JLabel cancel_btn;
     private rojeru_san.complementos.RSButtonHover clear_add_btn1;
     private rojeru_san.complementos.RSButtonHover clear_cal_btn;
     private rojeru_san.complementos.RSButtonHover clear_pay_btn;

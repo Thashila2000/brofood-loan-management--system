@@ -82,29 +82,20 @@ public class payment_details_page extends javax.swing.JFrame {
 
         rSPopuMenu1 = new rojeru_san.complementos.RSPopuMenu();
         jPanel1 = new javax.swing.JPanel();
-        back_btn = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
         search_txt = new app.bolivia.swing.JCTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         payments_tbl = new rojeru_san.complementos.RSTableMetro();
+        ancel_btn = new rojeru_san.complementos.RSButtonHover();
+        rSButtonHover2 = new rojeru_san.complementos.RSButtonHover();
+        back_btn = new rojeru_san.complementos.RSButtonHover();
+        cancel_btn = new rojeru_san.complementos.RSButtonHover();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(0, 51, 102));
-
-        back_btn.setFont(new java.awt.Font("Segoe UI Semibold", 1, 60)); // NOI18N
-        back_btn.setForeground(new java.awt.Color(204, 0, 0));
-        back_btn.setText("<");
-        back_btn.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                back_btnMouseClicked(evt);
-            }
-        });
-
-        jLabel1.setFont(new java.awt.Font("Segoe UI Semibold", 1, 40)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Payment details");
 
         search_txt.setFont(new java.awt.Font("Segoe UI Semibold", 0, 20)); // NOI18N
         search_txt.setPlaceholder("Enter ID or name");
@@ -146,55 +137,106 @@ public class payment_details_page extends javax.swing.JFrame {
         payments_tbl.setRowHeight(40);
         jScrollPane1.setViewportView(payments_tbl);
 
+        ancel_btn.setBackground(new java.awt.Color(0, 51, 102));
+        ancel_btn.setText("X");
+        ancel_btn.setColorHover(new java.awt.Color(0, 51, 102));
+        ancel_btn.setColorTextHover(new java.awt.Color(153, 0, 0));
+        ancel_btn.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 50)); // NOI18N
+        ancel_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ancel_btnActionPerformed(evt);
+            }
+        });
+
+        rSButtonHover2.setBackground(new java.awt.Color(0, 51, 102));
+        rSButtonHover2.setText("Payment details");
+        rSButtonHover2.setColorHover(new java.awt.Color(0, 51, 102));
+        rSButtonHover2.setColorTextHover(new java.awt.Color(255, 51, 51));
+        rSButtonHover2.setFont(new java.awt.Font("Segoe UI Semibold", 1, 40)); // NOI18N
+
+        back_btn.setBackground(new java.awt.Color(0, 51, 102));
+        back_btn.setText("<");
+        back_btn.setColorHover(new java.awt.Color(0, 51, 102));
+        back_btn.setColorTextHover(new java.awt.Color(153, 0, 0));
+        back_btn.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 70)); // NOI18N
+        back_btn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                back_btnMouseClicked(evt);
+            }
+        });
+        back_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                back_btnActionPerformed(evt);
+            }
+        });
+
+        cancel_btn.setBackground(new java.awt.Color(0, 51, 102));
+        cancel_btn.setText("X");
+        cancel_btn.setColorHover(new java.awt.Color(0, 51, 102));
+        cancel_btn.setColorTextHover(new java.awt.Color(153, 0, 0));
+        cancel_btn.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 50)); // NOI18N
+        cancel_btn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cancel_btnMouseClicked(evt);
+            }
+        });
+        cancel_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cancel_btnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(37, 37, 37)
+                .addComponent(back_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(72, 72, 72)
+                .addComponent(rSButtonHover2, javax.swing.GroupLayout.PREFERRED_SIZE, 376, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(64, 64, 64)
-                        .addComponent(back_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(158, 158, 158)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 313, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(289, 289, 289)
+                        .addGap(421, 421, 421)
                         .addComponent(search_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 422, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(154, 154, 154)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1244, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(189, Short.MAX_VALUE))
+                        .addGap(876, 876, 876)
+                        .addComponent(cancel_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 1172, Short.MAX_VALUE)
+                .addComponent(ancel_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(66, 66, 66))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(133, 133, 133)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1322, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(38, 38, 38)
-                                .addComponent(back_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(62, 62, 62)
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 104, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(search_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(54, 54, 54)))
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 532, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(64, 64, 64))
+                        .addGap(20, 20, 20)
+                        .addComponent(cancel_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(23, 23, 23)
+                        .addComponent(search_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(62, 62, 62)
+                        .addComponent(ancel_btn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(54, 54, 54)
+                        .addComponent(rSButtonHover2, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(back_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(48, 48, 48)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 536, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(293, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 2830, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void back_btnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_back_btnMouseClicked
-        Home_page hp = new Home_page();
-        hp.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_back_btnMouseClicked
 
     private void search_txtKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_search_txtKeyPressed
         // TODO add your handling code here:
@@ -204,6 +246,28 @@ public class payment_details_page extends javax.swing.JFrame {
       String searcString=search_txt.getText();
       search(searcString);
     }//GEN-LAST:event_search_txtKeyReleased
+
+    private void ancel_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ancel_btnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ancel_btnActionPerformed
+
+    private void back_btnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_back_btnMouseClicked
+       Home_page hp = new Home_page();
+       hp.setVisible(true);
+       this.dispose();
+    }//GEN-LAST:event_back_btnMouseClicked
+
+    private void back_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_back_btnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_back_btnActionPerformed
+
+    private void cancel_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancel_btnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cancel_btnActionPerformed
+
+    private void cancel_btnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cancel_btnMouseClicked
+        this.dispose();
+    }//GEN-LAST:event_cancel_btnMouseClicked
     
    
     /**
@@ -242,11 +306,13 @@ public class payment_details_page extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel back_btn;
-    private javax.swing.JLabel jLabel1;
+    private rojeru_san.complementos.RSButtonHover ancel_btn;
+    private rojeru_san.complementos.RSButtonHover back_btn;
+    private rojeru_san.complementos.RSButtonHover cancel_btn;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private rojeru_san.complementos.RSTableMetro payments_tbl;
+    private rojeru_san.complementos.RSButtonHover rSButtonHover2;
     private rojeru_san.complementos.RSPopuMenu rSPopuMenu1;
     private app.bolivia.swing.JCTextField search_txt;
     // End of variables declaration//GEN-END:variables
